@@ -1,0 +1,6 @@
+# Unpinned blobs from sys_tssi_64_armv82_tecno_dolby-user 14 UP1A.231005.007 742679 release-keys
+
+# AEE
+vendor/lib/libaedv.so
+vendor/lib64/libaedv.so
+
