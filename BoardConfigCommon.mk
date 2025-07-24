@@ -121,3 +121,6 @@ include device/mediatek/sepolicy_vndr/SEPolicy.mk
 #SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
 #SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/public
 #BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
+
+# Vendor Security Patch
+VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
