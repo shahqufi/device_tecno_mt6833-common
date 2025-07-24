@@ -147,3 +147,33 @@ BOARD_AVB_VBMETA_VENDOR_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
 BOARD_AVB_VBMETA_VENDOR_ALGORITHM := SHA256_RSA2048
 BOARD_AVB_VBMETA_VENDOR_ROLLBACK_INDEX := 1
 BOARD_AVB_VBMETA_VENDOR_ROLLBACK_INDEX_LOCATION := 3
+
+#TODO: Remove this once the device is fully supported
+# VINTF
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
+   $(COMMON_PATH)/configs/vintf/device_framework_compatibility_matrix.xml \
+   hardware/mediatek/vintf/mediatek_framework_compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := $(COMMON_PATH)/configs/vintf/manifest.xml
+DEVICE_MATRIX_FILE := $(COMMON_PATH)/configs/vintf/compatibility_matrix.xml
+
+# Wi-Fi
+WPA_SUPPLICANT_VERSION := VER_0_8_X
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_HOSTAPD_DRIVER := NL80211
+
+WIFI_DRIVER_FW_PATH_PARAM := "/dev/wmtWifi"
+WIFI_DRIVER_FW_PATH_STA := "STA"
+WIFI_DRIVER_FW_PATH_AP := "AP"
+WIFI_DRIVER_FW_PATH_P2P := "P2P"
+WIFI_DRIVER_STATE_CTRL_PARAM := "/dev/wmtWifi"
+WIFI_DRIVER_STATE_ON := "1"
+WIFI_DRIVER_STATE_OFF := "0"
+WIFI_HAL_INTERFACE_COMBINATIONS := {{{STA}, 2}}
+WIFI_HAL_INTERFACE_COMBINATIONS += ,{{{AP}, 2},}
+WIFI_HAL_INTERFACE_COMBINATIONS += ,{{{STA}, 1}, {{AP}, 1}}
+WIFI_HAL_INTERFACE_COMBINATIONS += ,{{{STA}, 1}, {{P2P}, 1}}
+WIFI_HAL_INTERFACE_COMBINATIONS += ,{{{STA}, 1}, {{NAN}, 1}}
+WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
+
+# Inherit proprietary blobs
+include vendor/tecno/mt6833-common/BoardConfigVendor.mk
